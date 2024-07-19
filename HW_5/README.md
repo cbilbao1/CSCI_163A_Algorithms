@@ -60,7 +60,7 @@ int* transformSort (int myArray1[], int myArray2[], int myArray3[])
 			parentArray[i] = myArray3[index3];
 		}
 
-    	//myArray1 and myArray2 is left
+    		//myArray1 and myArray2 is left
 		else if ((index1 < myArray1.size() && index2 < myArray2.size()) && index3 >= myArray3.size())
 		{
 			if (myArray1[index1] <= myArray2[index2])
@@ -73,7 +73,7 @@ int* transformSort (int myArray1[], int myArray2[], int myArray3[])
         index2 += 1;
 			}
 		}
-    	//myArray1 and myArray3 is left
+    		//myArray1 and myArray3 is left
 		else if ((index1 < myArray1.size() && index3 < myArray3.size()) && index2 >= myArray2.size())
 		{
 			if (myArray1[index1] <= myArray3[index3])
@@ -86,7 +86,7 @@ int* transformSort (int myArray1[], int myArray2[], int myArray3[])
         index3 += 1;
 			}
 		}
-    	//myArray2 and myArray3 is left
+    		//myArray2 and myArray3 is left
 		else if ((index2 < myArray2.size() && index3 < myArray3.size()) && index1 >= myArray1.size())
 		{
 			if (myArray2[index2] <= myArray3[index3])
@@ -159,7 +159,7 @@ for (int i = 0; i <= myArray.size() - 1; ++i)
 			//Check answers in lower cases
 			bool isFound1 = isFound(array1);
 			bool isFound2 = isFound(array2);
-		//Last element index
+			//Last element index
 			int lastIndex = myArray.size() - 1;
 			//Search starting with first and last element, converging in, until they meet
 			for (int i = 0; i <= myArray.size() / 2; ++i)
@@ -202,7 +202,7 @@ for (int i = 0; i <= myArray.size() - 1; ++i)
 			//Check answers in lower cases
 			bool isFound1 = isFound(array1);
 			bool isFound2 = isFound(array2);
-		  //Last element index
+		  	//Last element index
 			int lastIndex = myArray.size() - 1;
 			//Search starting with first and last element, converging in, until they meet
 			for (int i = 0; i <= myArray.size() / 2; ++i)

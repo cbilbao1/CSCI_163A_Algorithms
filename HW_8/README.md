@@ -15,11 +15,11 @@ void lcsPrint (string s, string t)
 	{
 		s[0][j] = 0;
 	}
-  for (int i = 0; i <= n; ++i)
+  	for (int i = 0; i <= n; ++i)
 	{
 		s[i][0] = 0;
 	}
-  for (int i = 1; i <= n; ++i)
+  	for (int i = 1; i <= n; ++i)
 	{
 		for (int j = 1; j <= m; ++j)
 		{
@@ -33,7 +33,7 @@ void lcsPrint (string s, string t)
 		}
 	}
 	//s [a b c b d a b],
-  //T [b d c a b a]
+  	//T [b d c a b a]
 	//Create auxiliary array, representing a subsequence of s, length S[n][m]
 	char substringS[S[n][m] + 1];
 	//Add terminating character to the end
@@ -46,28 +46,28 @@ void lcsPrint (string s, string t)
 		substringS[i] = a;
 	}
 	//Now that we have the max length, we know how much to put into the answer
-  //Create index variables corresponding to s and t positions
-  int sIndex = n;
-  int tIndex = m;
-  //We will use the 2D array and traverse backwards from the bottom right corner going top left
-  while (sIndex > 0 && tIndex > 0)
-  {
-  //If the current character in s and t are same, then add it to the answer
-  if (s[sIndex - 1] == t[tIndex - 1])
-  {
-  substringS[subIndex - 1] = s[sIndex - 1];	// Put current character in result
-  sIndex -= 1;	// Decrement the 2D array cubbies
-  tIndex -= 1;
-  subIndex -= 1;	// Go back a character in the answer array
-  } else if (S[sIndex - 1][tIndex] > S[sIndex][tIndex - 1])	// Otherwise, choose one of the characters
-  {
-  sIndex -= 1;
-  }
-  else
-  {
-  tIndex -= 1;
-  }
-  //For (int i = 1; i <= n; ++i)
+  	//Create index variables corresponding to s and t positions
+  	int sIndex = n;
+  	int tIndex = m;
+  	//We will use the 2D array and traverse backwards from the bottom right corner going top left
+  	while (sIndex > 0 && tIndex > 0)
+  	{
+  	//If the current character in s and t are same, then add it to the answer
+  	if (s[sIndex - 1] == t[tIndex - 1])
+  	{
+  	substringS[subIndex - 1] = s[sIndex - 1];	// Put current character in result
+  	sIndex -= 1;	// Decrement the 2D array cubbies
+  	tIndex -= 1;
+  	subIndex -= 1;	// Go back a character in the answer array
+  	} else if (S[sIndex - 1][tIndex] > S[sIndex][tIndex - 1])	// Otherwise, choose one of the characters
+  	{
+  	sIndex -= 1;
+  	}
+  	else
+  	{
+  	tIndex -= 1;
+  	}
+  	//For (int i = 1; i <= n; ++i)
   	//{
   		//If we are ever back here, then the previous answer didn’t work, reset answer arr
   		//?
@@ -86,15 +86,15 @@ void lcsPrint (string s, string t)
   		//}
   	//}
   	//For this case, I will just print the longest subsequence
-  cout << “The longest subsequence is: “;
-  for (int i = 0; i <= substringS.size() - 1; ++i)
-  {
-  	cout << subStringS << “ “;
-  }
-  cout << endl;
-  return;
+  	cout << “The longest subsequence is: “;
+  	for (int i = 0; i <= substringS.size() - 1; ++i)
+  	{
+  		cout << subStringS << “ “;
+  	}
+  	cout << endl;
+  	return;
   	//Comparison between substring of S, substringS, and portions of string t
-  //For (int i = 0; s =- 0; ++i)
+  	//For (int i = 0; s =- 0; ++i)
   	//{
   		//For (int i = 0; i <= S[n][m] - 1; ++i)
   		//{
@@ -151,9 +151,9 @@ int* incSubsequence (int A[])
 	//May be unnecessary, Θ(n lg n)
 	mergeSort(A);
 	//Create longest subsequence array, first will be decreasing
-  int B[A.size()];
+  	int B[A.size()];
 	//Get the solution from a function that gives a longest decreasing subsequence of A, assuming that decSubsequence() returns an array
-  B = decSubsequence(A);	// Actually a pointer operation, C(n)
+  	B = decSubsequence(A);	// Actually a pointer operation, C(n)
 	//The solution is a longest subsequence, though it is decreasing, should be same solution the other way
 	//Make a third array, to store everything in reverse order, signifying nondecreasing instead of decreasing
 	int C[B.size()];

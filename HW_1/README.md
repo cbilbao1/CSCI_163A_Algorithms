@@ -1,24 +1,27 @@
 # CSCI_163A_Algorithms
 # Homework 1
 
-#NOTE: THESE ARE NOT CODING QUESTIONS, BUT RATHER ANALYSIS QUESTIONS
+## NOTE: THESE ARE NOT CODING QUESTIONS, BUT RATHER ANALYSIS QUESTIONS
 
-# Find an exact formula for the number of swaps in bubble sort:
-# void bubble sort (vector <T> & V)
-# {
-  # int n = V.size();
-  # for (int s = n; s > 1; --s)
-    # for (int i = 0; i < s-1; ++i)
-      # if (V[i] > V[i+1])
-        # swap(V[i], V[i+1]);
-# }
-# A1: Whenever there is a for loop, we will write a summation for the formula. As we can see, there is actually a nested for loop in this algorithm. s = 2 Σ n i = 0 Σ s - 2 (1). The first for loop starts at s = n, then
-# decrements to s > 1, but it basically can be thought of as starting at s = 2, and ending at term n (if you think backwards, inclusive). The next for loop starts at i = 0 and goes on to i < s - 1. The operation that we are
-# analyzing is a function call, swap(). Within the grand scheme of the function call of swap(), we know that only 1 swap takes place, so that’s why we have (1) in the summation as the body. We also know that
-# i = first Σ last(1) = last - first + 1. So, we use that to solve for the formula. So, the formula is s = 2 Σ n i = 0 Σ s - 2 (1) = s = 2 Σ n ((s - 2) - 0 + 1) = s = 2 Σ n (s - 1) = s = 1 Σ n - 1 ((s - 1) + 1) = s
-# = 1 Σ n - 1 (s) = ((n - 1) * n) / 2.
+1. Find an exact formula for the number of swaps in bubble sort:
+```
+void bubble sort (vector <T> & V)
+{
+  int n = V.size();
+  for (int s = n; s > 1; --s)
+    for (int i = 0; i < s-1; ++i)
+      if (V[i] > V[i+1])
+        swap(V[i], V[i+1]);
+}
+```
+Analysis
+A1: Whenever there is a for loop, we will write a summation for the formula. As we can see, there is actually a nested for loop in this algorithm. s = 2 Σ n i = 0 Σ s - 2 (1). The first for loop starts at s = n, then
+decrements to s > 1, but it basically can be thought of as starting at s = 2, and ending at term n (if you think backwards, inclusive). The next for loop starts at i = 0 and goes on to i < s - 1. The operation that we are
+analyzing is a function call, swap(). Within the grand scheme of the function call of swap(), we know that only 1 swap takes place, so that’s why we have (1) in the summation as the body. We also know that
+i = first Σ last(1) = last - first + 1. So, we use that to solve for the formula. So, the formula is s = 2 Σ n i = 0 Σ s - 2 (1) = s = 2 Σ n ((s - 2) - 0 + 1) = s = 2 Σ n (s - 1) = s = 1 Σ n - 1 ((s - 1) + 1) = s
+= 1 Σ n - 1 (s) = ((n - 1) * n) / 2.
 
-# Show that 
+2. Show that 
 # 2 log 3 ⁡ n = n log 3 ⁡ 2.
 # A2: 	→ 2 (log n / log 3) = n (log 2 / log 3)
 # → log (2 (log n / log 3)) = log (n (log 2 / log 3))

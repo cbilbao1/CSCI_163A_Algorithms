@@ -21,9 +21,11 @@ analyzing is a function call, swap(). Within the grand scheme of the function ca
 i = first Σ last(1) = last - first + 1. So, we use that to solve for the formula. So, the formula is s = 2 Σ n i = 0 Σ s - 2 (1) = s = 2 Σ n ((s - 2) - 0 + 1) = s = 2 Σ n (s - 1) = s = 1 Σ n - 1 ((s - 1) + 1) = s
 = 1 Σ n - 1 (s) = ((n - 1) * n) / 2.
 
-2. Show that 
-# 2 log 3 ⁡ n = n log 3 ⁡ 2.
-# A2: 	→ 2 (log n / log 3) = n (log 2 / log 3)
+2. Show that
+
+2 log 3 ⁡ n = n log 3
+
+A2: 	→ 2 (log n / log 3) = n (log 2 / log 3)
 # → log (2 (log n / log 3)) = log (n (log 2 / log 3))
 # → (log 2 / log 3) * log n = (log n / log 3) * log 2
 # → (log 2 / log 3) * log n = (log 2 / log 3) * log n
